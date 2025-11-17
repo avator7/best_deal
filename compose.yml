@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  bestdeal-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bestdeal_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SELENIUM_HEADLESS=1
+    restart: unless-stopped
